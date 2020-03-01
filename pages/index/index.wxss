@@ -1,0 +1,110 @@
+
+
+
+
+.input_tu image {
+  height: 100%;
+}
+
+/*  菜单栏 */
+.images_po {
+  display: flex;
+  background:hsl(0, 0%, 92%);
+  align-items: center;
+  justify-content: flex-start;
+  /* margin: 13px 0; */
+}
+
+
+.images_po image {
+  width: 180rpx;
+  height: 150rpx;
+}
+
+/* 轮播图 */
+.swiper {
+height: 340rpx;
+}
+
+.swiper image {
+width: 750rpx;
+height: 340rpx;
+}
+
+
+/* 楼层 */
+.floor {
+
+}
+
+.floor_top {
+ background-color: #f4f4f4;
+}
+
+.floor .floor_top .floor_title {
+padding-top: 20rpx;
+vertical-align: bottom;
+width: 100%;
+height: 60rpx;
+}
+
+.floor_content {
+display: flex;
+justify-content: space-between;
+padding: 15rpx;
+}
+
+.floor_left {
+margin-right: 12rpx;
+}
+
+.floor_left image {
+border-radius: 5px;
+width: 232rpx;
+height: 386rpx;
+}
+
+.floor_right {
+flex: 1;
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.floor_right image {
+width: 233rpx;
+height: 188rpx;
+}
+.floor + .floor .floor_right image{
+    width: 193rpx;
+}
+
+.floor + .floor .floor_right image:nth-child(3n + 1){
+    width: 273rpx;
+}
+
+/* 顶部 */
+.Tob{
+    width:90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    background: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 12px;
+    position: fixed;
+    right: 20rpx;
+    bottom:50rpx;
+}
+
+.dingbu{
+    width:12px;
+    height:12px;
+    border-left: 1px #333 solid;
+    border-top: 1px #333 solid;
+    transform: rotate(45deg);
+    position: relative;
+    top: 10rpx;
+} 	

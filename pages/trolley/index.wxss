@@ -1,0 +1,82 @@
+.classify{
+display: flex;
+}
+/* 左侧 */
+.left_list{
+  width: 200rpx;
+  height: 100%;
+  background: #eee;
+  color: rgb(202, 197, 197);
+  /* 内容超出高度的时候出现滚动条 */
+  overflow: auto;
+  /* 控制缩放,不会被右边内容挤掉 */
+  flex-shrink: 0;
+  text-align:center;
+}
+.list_item{
+  border: 1px solid rgb(236, 234, 234);
+  padding: 20rpx 0;
+  width: 200rpx;
+  height:100% ;
+   position: relative;
+ 
+}
+.list_item:hover{
+  width: 200rpx;
+  height: 100%;
+  background: #FFF
+}
+
+.active{
+  color: red;
+  background: rgb(243, 240, 240);
+}
+.active::before{
+  display: block;
+  content: "";
+  width:3px;
+  height: 20px;
+  background: red;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-8px)
+}
+/* 右侧 */
+.right_list{
+  flex: 1;
+  overflow: auto;
+}
+.text_list{
+  text-align: center;
+  padding: 20rpx;
+  color: #000;
+}
+.text_list text{
+  /* margin: 20rpx 20rpx; */
+  color: red;
+}
+.list_image{
+  display: flex;
+  /* 换行 */
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.list_image navigator{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 33.33%;
+  overflow: 10rpx;
+  box-sizing: border-box;
+  padding: 20rpx
+
+}
+.list_image navigator image{
+  width: 100%;
+  height: 92rpx;
+  /* padding: 56rpx */
+}

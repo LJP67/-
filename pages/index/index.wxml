@@ -1,0 +1,50 @@
+<!-- 搜素框 -->
+<!-- 引用组件 -->
+<search/>
+
+<!-- 轮播图 -->
+<swiper class="swiper" indicator-dots autoplay indicator-color="rgba(255, 255, 255, .9)" indicator-active-color="rgba(255, 255, 255, .5)" >
+  <block wx:for="{{inputshu}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item.image_src}}"   mode="aspectFill"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<!-- 菜单栏 -->
+<view class="images_po">
+<view class="image_src" wx:for="{{images_src}}" wx:key="index">
+<navigator url="/">
+    <image src="{{item.image_src}}" mode="aspectFit"></image>
+</navigator>
+</view>
+</view>
+
+<!-- 楼层部分 -->
+<view class="floor" wx:for="{{floor_tu}}" wx:key="index">
+  <!-- 楼层头部 -->
+  <view class="floor_top">
+      <image
+      class="floor_title"
+       src="{{item.floor_title.image_src}}" mode="aspectFit"></image>
+</view>
+<!-- 二楼包裹左右 -->
+  <view class="floor_content">
+  <!-- 左图 -->
+  <view class="floor_left">
+      <image src="{{item.product_list[0].image_src}}" mode="aspectFit" ></image>
+  </view>
+  <!-- 右图 -->
+  <view class="floor_right" >
+  <block wx:for="{{item.product_list}}" wx:key="index" wx:if="{{index>0}}">
+      <image src="{{item.image_src}}" ></image>
+      </block>
+  </view>
+</view>
+</view>
+<!-- 回到顶部 -->
+<view class="Tob" bindtap="clickTob" wx:if="{{isShowTob}}">
+  <view class="dingbu"></view>
+  <text>顶部</text>
+</view>

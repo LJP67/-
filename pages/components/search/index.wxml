@@ -1,0 +1,8 @@
+<view class="passinput">
+  <navigator url="">
+    <view class="inputuuu">
+      <icon type="search" size="20"></icon>
+      搜索
+    </view>
+  </navigator>
+</view>

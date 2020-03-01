@@ -1,0 +1,21 @@
+/* input框 */
+.passinput {
+  background: #ff2d4a;
+  height: 35px;
+  padding: 20rpx;
+}
+.inputuuu {
+  display: flex;
+  text-align: center;
+  background: #fff;
+  width: 100%;
+  height: 65rpx;
+  border-radius: 5px;
+  line-height: 65rpx;
+  align-content: center;
+  justify-content: center;
+}
+
+.inputuuu icon {
+  margin: 4px 5px;
+}
