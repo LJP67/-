@@ -9,7 +9,11 @@ Page({
     // 关键字
     keyword:'',
   // input输入时的值
-  inputvalue:[]
+  inputvalue:'',
+  // 下拉的数据
+  DropDownDataWindow:[],
+  // 下拉隐藏
+  isShow:false
   },
 
   /**
@@ -26,11 +30,23 @@ Page({
     const {value} = e.detail
   this.setData({
     inputvalue: value
+
   });
     // 没有值就暂停请求
     if (!value) return;
-
-
+    // 发请求获取后台数据
+    request({
+      url:'/goods/qsearch',
+      data:{
+        query:value
+      }
+    }).then(res=>{
+      console.log(res)
+      const { message } = res.data
+      this.setData({
+        DropDownDataWindow:message
+      })
+    })
   },
 
 
