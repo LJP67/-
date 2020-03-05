@@ -6,14 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // 关键字
-    keyword:'',
   // input输入时的值
   inputvalue:'',
   // 下拉的数据
   DropDownDataWindow:[],
-  // 下拉隐藏
-  isShow:false
+
   },
 
   /**
@@ -22,6 +19,7 @@ Page({
   onLoad: function (options) {
     
   },
+
   
   // 监听用户的输入事件 
  
@@ -33,7 +31,13 @@ Page({
 
   });
     // 没有值就暂停请求
-    if (!value) return;
+    if (!value){
+      this.setData({
+        // 把搜索的内容清空
+        DropDownDataWindow: []
+      })
+      return;
+    };
     // 发请求获取后台数据
     request({
       url:'/goods/qsearch',
@@ -48,6 +52,15 @@ Page({
       })
     })
   },
+  // 下拉消失术
+  showCan(e){
+    this.setData({
+      // input输入时的内容
+      inputvalue: '',
+      // 下拉的数据
+      DropDownDataWindow:''
+    })
+  }
 
 
 })

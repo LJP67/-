@@ -3,9 +3,9 @@
     <view class="search-input">
       <icon type="search" size="20" />
       <!-- bindinput类似于oninput，监听用户的输入事件 -->
-      <input bindinput="handleInput" placeholder="请输入您想要的商品"></input>
+      <input bindinput="handleInput" placeholder="请输入您想要的商品" value="{{inputvalue}}"></input>
     </view>
-    <view wx:if="{{inputvalue}}" class="cancel-button">取消</view>
+    <view wx:if="{{inputvalue}}" class="cancel-button" bindshow="showCan">取消</view>
 
     <!-- 搜索下拉的列表 -->
     <view class="xiala" wx:if="{{DropDownDataWindow.length}}" >
