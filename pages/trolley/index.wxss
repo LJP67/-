@@ -1,5 +1,10 @@
 .classify{
 display: flex;
+position: absolute;
+top: 110rpx;
+button:0;
+width: 750rpx;
+justify-content: space-between;
 }
 /* 左侧 */
 .left_list{

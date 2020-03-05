@@ -12,7 +12,7 @@ onLoad(){
     url: "/categories"
   }).then(res => {
     console.log(res)
-    const { message } = res.data
+    const { message } = res.data    
     this.setData({
       left_cun: message
     })

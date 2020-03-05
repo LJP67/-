@@ -3,30 +3,26 @@
 
 <!-- 分类 -->
 <view class="classify">
-
   <!-- 左侧 -->
   <view class="left_list">
     <block wx:for="{{ left_cun }}" wx:key="index">
       <view class="list_item {{ current === index ? 'active' : ''}}" bindtap="handclick" data-index="{{index}}">{{item.cat_name}}</view>
     </block>
   </view>
-
   <!-- 右侧 -->
   <view class="right_list">
     <!-- 子级分类 -->
     <block wx:for="{{ left_cun[current].children }}" wx:key="index">
       <view class="text_list">
         <view class="text_title">
-          <text>{{item.cat_name}}</text> 
+          <text>{{item.cat_name}}</text>
         </view>
-
-
         <!-- 品牌分类 -->
         <view class="list_image">
           <block wx:for="{{ item.children }}" wx:key="inedx">
-            <navigator url="/">
+            <navigator url="/pages/hakusivu/index?keyword={{ item.cat_name }}">
               <image src="{{item.cat_icon}}" mode="aspectFill"></image>
-             <view>{{ item.cat_name }}</view>
+              <view>{{ item.cat_name }}</view>
             </navigator>
           </block>
         </view>

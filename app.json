@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/trolley/index",
     "pages/mine/index",
-    "pages/shopping/index"
+    "pages/shopping/index",
+    "pages/hakusivu/index",
+    "pages/seek/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

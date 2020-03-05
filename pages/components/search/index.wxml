@@ -1,5 +1,5 @@
 <view class="passinput">
-  <navigator url="">
+  <navigator url="/pages/seek/index">
     <view class="inputuuu">
       <icon type="search" size="20"></icon>
       搜索
