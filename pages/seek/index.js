@@ -14,25 +14,33 @@ Page({
     throttle:false,
     // input上一个的值
     PreviousRequest:'',
-   
+    // 历史记录-本地存储
+    keyStorage:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    // 获取本地存储
+    let arr = wx.getStorageSync("keyStorage")
+    if(!Array.isArray(arr)){
+      // 如果Array不是一个数组 就让它成为数组
+      arr=[];
+    }
+    this.setData({
+      keyStorage:arr
+    });
   },
 
   
   // 监听用户的输入事件 
   handleInput(e){
-    console.log(e)
-    const {value} = e.detail
-  this.setData({
-    inputvalue: value
-
-  });
+      console.log(e)
+      const {value} = e.detail
+    this.setData({
+      inputvalue: value
+    });
     // 没有值就暂停请求
     if (!value){
       this.setData({
@@ -41,35 +49,20 @@ Page({
       })
       return;
     };
-
-    // 发请求获取后台数据
-    // request({
-    //   url:'/goods/qsearch',
-    //   data:{
-    //     query:value
-    //   }
-    // }).then(res=>{
-    //   console.log(res)
-    //   const { message } = res.data
-    //   this.setData({
-    //     DropDownDataWindow:message
-    //   })
-    // })
+    // 调用节流方法请求数据
     this.IfTheThrottle()
-    
   },
-
-  // 下拉消失术 
+  // 下拉消失术  取消按钮
   showCan(e){
+    console.log(123)
     this.setData({
       // input输入时的内容
       inputvalue: '',
       // 下拉的数据
-      DropDownDataWindow:''
+      DropDownDataWindow:[]
+  
     })
   },
-
-
   // 节流 优化服务器性能
   IfTheThrottle(){
     // 2 判断 并修改状态
@@ -102,6 +95,44 @@ Page({
         this.IfTheThrottle();
       }
     }
+  },
+  // 输入框失焦时候触发
+  handunfocused(){
+    this.setData({
+      keyStorage: []
+    })
+   },
+  //  清空本地存储
+  handempty(){
+    // 点击清空数据
+    this.setData({
+      keyStorage:[]
+    })
+    // 清空本地的历史数据
+    wx.setStorageSync("keyStorage", [])
+  },
+  // 回车按钮时候触发的事件
+handleEnter(){
+  // 每次存储之前先把本地的数据先获取回来
+  let arr = wx.getStorageSync("keyStorage")
+  if (!Array.isArray(arr)) {
+    // 如果Array不是一个数组 就让它成为数组
+    arr = [];
   }
+  // 把input输入的值添加到数组的首位
+  // unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度 js方法
+  arr.unshift(this.data.inputvalue);
+  
+  // 数组去重
+  arr = [...new Set(arr)]
+
+  // 把关键字存到本地
+  wx.setStorageSync("keyStorage", arr)
+
+  // 跳转到商品搜索列表页
+  wx.redirectTo({
+    url: "/pages/hakusivu/index?keyword=" + this.data.inputvalue
+  })
+}
 
 })
