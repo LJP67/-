@@ -59,7 +59,6 @@ Page({
           v.goods_price = Number(v.goods_price).toFixed(2)
           return v
         })
-
         // 把message的数据保存到list
         this.setData({
           // 合并原来的列表和请求回来的列表
@@ -67,16 +66,12 @@ Page({
           // 当前请求完毕
           loading: false
         })
-
         // 判断是否最后一页 
         if (this.data.goods.length >= message.total) {
           this.setData({
             hidesmore: false
           })
         }
-        
-
-
       })
     }, 1000)
   },
