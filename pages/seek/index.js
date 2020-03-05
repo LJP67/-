@@ -13,7 +13,8 @@ Page({
   // 1 节流的变量
     throttle:false,
     // input上一个的值
-    PreviousRequest:''
+    PreviousRequest:'',
+   
   },
 
   /**
@@ -84,12 +85,12 @@ Page({
         data: {
           query: this.data.inputvalue
         }
-      }).then(res => {
+      }).then(res => { 
         const { message } = res.data
         this.setData({
           DropDownDataWindow: message,
           // 4 请求完之后改变状态
-          throttle: 'false'
+          throttle: false
         })
       });
 
