@@ -58,11 +58,6 @@ class="attrs"
 </view>
 
 
-
-
-
-
-
 <!-- 页脚的按钮部分  -->
  <view class="btns">
       <!-- 客服 -->

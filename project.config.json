@@ -58,9 +58,9 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/detailpage/index",
-					"pathName": "pages/detailpage/index",
-					"query": "id=1",
+					"name": "pages/hakusivu/index",
+					"pathName": "pages/hakusivu/index",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -19,7 +19,7 @@
     <view class="xiala" wx:if="{{DropDownDataWindow.length}}">
       <navigator wx:for="{{ DropDownDataWindow }}"
        wx:key="index"
-       url="/pages/hakusivu/index?keyword={{item.goods_id}}" 
+       url="/pages/hakusivu/index?keyword={{inputvalue}}" 
        >
         {{item.goods_name}}
       </navigator>

@@ -22,7 +22,7 @@ Page({
     request({
       url:"/goods/detail",
       data:{
-        goods_id: options.id
+        goods_id: options.keyword
       }
     }).then(res =>{
       console.log(res)
