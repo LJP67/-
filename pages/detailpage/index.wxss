@@ -139,3 +139,17 @@
 .attr-item text{
     margin-right: 20rpx;
 } 
+/* 客服按钮 */
+.contact{
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    left:0; 
+    top:0;
+    overflow: auto;
+    opacity: 0;
+}
+
+.contact button{
+    height: 100rpx;
+}

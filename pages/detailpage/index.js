@@ -42,14 +42,16 @@ Page({
   handleTab(e){
     console.log(e)
     const {index} = e.currentTarget.dataset
+    
     this.setData({
       current:index
     })
   },
   // 轮播图点击放大预览效果
-  handlePreview(){
+  handlePreview(e){
+    const {index} = e.currentTarget.dataset;
     wx.previewImage({
-      // current: '', // 当前显示图片的http链接
+      current: this.data.picUrls[index], // 当前显示图片的http链接
       urls: this.data.picUrls // 需要预览的图片http链接列表
     })
   }

@@ -9,6 +9,7 @@
       <image mode="aspectFill"
        src="{{item.pics_big}}"
        bindtap="handlePreview"
+       data-index="{{index}}"
     >
        </image>
     </swiper-item>
@@ -61,6 +62,11 @@ class="attrs"
 <!-- 页脚的按钮部分  -->
  <view class="btns">
       <!-- 客服 -->
+
+       <!-- 联系客服的按钮 -->
+        <view class="contact">
+            <button open-type="contact">联系客服</button>
+        </view>
         <view class="btn-white">
             <view class="iconfont iconkefu"></view>
             <text>联系客服</text>
