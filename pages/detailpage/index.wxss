@@ -1,0 +1,141 @@
+.container {
+  padding-bottom: 100rpx;
+}
+
+/* 轮播图 */
+
+.swiper {
+  width: 750rpx;
+  height: 750rpx;
+}
+
+.swiper image {
+  width: 750rpx;
+  height: 750rpx;
+}
+
+/* 价格及详情 */
+
+.detail {
+  padding: 20rpx;
+}
+
+/* 价格 */
+
+.money {
+  font-size: 22px;
+  color: red;
+}
+
+/* 商品介绍 */
+
+.jieshao {
+  margin-top: 20rpx;
+  display: flex;
+  /* 项目位于各行之间留有空白的容器内 */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jieshao_left {
+  flex: 1;
+  /* 超出行列显示省略号 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.jieshao_right {
+  width: 120rpx;
+  display: flex;
+  /* 规定垂直显示 */
+  flex-direction: column;
+  /* 规定项目位于容器的中心 */
+  justify-content: center;
+  align-items: center;
+  margin-left: 20rpx;
+  color: rgb(134, 130, 130);
+  border-left: 1px #ccc solid;
+}
+
+.jieshao_right text {
+  font-size: 13px;
+}
+
+.expressage {
+  margin-top: 20rpx;
+  font-size: 14px;
+  color: #999;
+}
+
+/* 页脚部分 */
+.btns{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -2px 2px #eee;
+    background: #fff;
+}
+
+.btns > view{
+    height: 100rpx;
+}
+
+.btn-white{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.btn-color{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: orange;
+}
+
+.btn-color:last-child{
+    background: red;
+}
+
+/* tab切换详情规格 */
+
+.tab{
+    display: flex;
+    border-top: 10px #eee solid;
+}
+
+.tab-item{
+    width: 50%;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+
+}
+
+.tab-item.active{
+    background: red;
+    color:#fff;
+}
+/* 商品详情 */
+
+.attrs{
+    padding: 20rpx;
+}
+
+.attr-item{
+    line-height: 2;
+}
+
+.attr-item text{
+    margin-right: 20rpx;
+} 

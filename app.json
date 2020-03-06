@@ -5,7 +5,9 @@
     "pages/mine/index",
     "pages/shopping/index",
     "pages/hakusivu/index",
-    "pages/seek/index"
+    "pages/seek/index",
+    "pages/detailpage/index"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

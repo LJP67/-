@@ -1,0 +1,83 @@
+<view class="container">
+<!-- 轮播图 -->
+<!-- indicator-dots 是否显示面板指示点 -->
+<swiper indicator-dots class="swiper" >
+  <block 
+    wx:for="{{ shang.pics }}"
+    wx:key="index">
+  <swiper-item >
+      <image mode="aspectFill"
+       src="{{item.pics_big}}"
+       bindtap="handlePreview"
+    >
+       </image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 商品的详情 -->
+<view class="detail">
+<!-- 价格 -->
+    <view class="money">¥{{ shang.goods_price }}</view>
+
+<view class="jieshao">
+    <!-- 左边详情 -->
+    <view class="jieshao_left">{{shang.goods_name}}</view>
+    <!-- 右边收藏 -->
+    <view class="jieshao_right">
+      <view class="iconfont  iconshoucang2"></view>
+      <text>收藏</text>
+    </view>
+</view>
+  <view class="expressage">快递：免运费</view>
+</view>
+
+ <!-- 商品详细信息的展示 tab切换-->
+  <view class="tab">
+    <view 
+     wx:for="{{ ['详情','规格'] }}"
+    wx:key="index"
+    bindtap="handleTab"
+    data-index="{{index}}"
+    class="tab-item {{current === index ? 'active' :''}}"
+    > 
+    {{item}}
+    </view>
+  </view>
+  <!-- 商品详细信息 -->
+<rich-text wx:if="{{current === 0}}" nodes="{{shang.goods_introduce}}"></rich-text>
+<!-- 商品规格 -->
+<view 
+wx:if="{{current === 1}}"
+wx:for="{{shang.attrs}}"
+wx:key="index"
+class="attrs"
+>
+<text>{{item.attr_name}}</text>
+<text>{{item.attr_vals}}</text>
+</view>
+
+
+
+
+
+
+
+<!-- 页脚的按钮部分  -->
+ <view class="btns">
+      <!-- 客服 -->
+        <view class="btn-white">
+            <view class="iconfont iconkefu"></view>
+            <text>联系客服</text>
+        </view>
+        <!-- 购物车 -->
+        <view class="btn-white">
+            <view class="iconfont icongouwuche7"></view>
+            <text>购物车</text>
+        </view>
+
+        <view class="btn-color">加入购物车</view>
+        <view class="btn-color">立即购买</view>
+    </view>
+<!-- 结尾 -->
+</view>

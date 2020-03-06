@@ -19,7 +19,7 @@
     <view class="xiala" wx:if="{{DropDownDataWindow.length}}">
       <navigator wx:for="{{ DropDownDataWindow }}"
        wx:key="index"
-       url="/pages/hakusivu/index?keyword={{item}}" 
+       url="/pages/hakusivu/index?keyword={{item.goods_id}}" 
        >
         {{item.goods_name}}
       </navigator>
@@ -32,7 +32,7 @@
 <!-- 历史记录 -->
   <view class="history-title">
         <view class="title-header">历史搜索</view>
-        <icon type="clear" size="20" bindtap="handmpty"></icon>
+        <icon type="clear" size="20" bindtap="handempty"></icon>
     </view>
     <!-- 历史搜索列表 -->
     <view class="history-list">
