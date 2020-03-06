@@ -1,21 +1,36 @@
 <view class="container">
  <!-- 收货地址 -->
-    <view class="address">
+    <view class="address" wx:if="{{formdz.name}}">
         <view class="address-info">
-            <view>收货人：卢</view>
-            <view class="tel">123456789</view>
+            <view>收货人：{{formdz.name}}</view>
+            <view class="tel">{{formdz.tel}}</view>
         </view>
-
-        <view class="address-detail">
-            收货地址：福建省漳州市南靖县
+        <view class="0">
+            收货地址：{{formdz.detail}}
         </view>
         <image mode="aspectFill" src="../images/2.png"></image>
     </view>
 
+ <!-- 收货地址 -->
+    <view class="address" bindtap="handshow"
+    wx:if="{{!formdz.name}}"
+    >
+        <view class="address-info">
+            <view>获取收货地址</view>
+            <view class="tel"></view>
+        </view>
+        <image mode="aspectFill" src="../images/2.png"></image>
+    </view>
+
+
+
+
+
+
   <!-- 购物车商品列表的头部 -->
     <view class="goods-list-title">
         <view class="iconfont iconRectangleCopy9"></view>
-        优购生活馆
+        女优生活馆
     </view>
 
     <!-- 商品列表 -->
@@ -23,16 +38,16 @@
         <!-- 商品的单项, 需要循环的 -->
         <view class="goods-item" wx:for="{{5}}">
             <icon type="success" color="red"></icon>
-            <image mode="aspectFill" src="https://img30.360buyimg.com/jdcms/s150x150_jfs/t1/84711/17/12205/230446/5e436e57E124bbbe4/5fb5f662b59689fa.jpg.webp"></image>
+            <image mode="aspectFill" src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1038868887,560278828&fm=26&gp=0.jpg"></image>
 
             <!-- 商品信息右侧 -->
             <view class="goods-item-right">
                 <view class="goods-title">
-                    商品信息右侧商品信
+                    女优
                 </view>
                 <view class="goods-info">
                     <view class="goods-price">
-                        <text>￥</text>25210
+                        <text>￥</text>656956456
                     </view>
                     <!-- 商品的数量 -->
                     <view class="goods-number">
@@ -54,7 +69,7 @@
         <view class="allprice">
             <view class="allprice-top">合计
                 <text>
-                    <text>￥</text>151221
+                    <text>￥</text>1512210
                 </text>
             </view>
             <view class="allprice-btm">包含运费</view>
