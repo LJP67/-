@@ -72,7 +72,7 @@ class="attrs"
             <text>联系客服</text>
         </view>
         <!-- 购物车 -->
-        <view class="btn-white">
+        <view class="btn-white" bindtap="handleToCart">
             <view class="iconfont icongouwuche7"></view>
             <text>购物车</text>
         </view>

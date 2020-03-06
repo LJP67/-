@@ -8,7 +8,7 @@ Page({
     // 商品的详情
     shang:{},
     // tab的索引
-    current: 1,
+    current: 0,
     // 点击图片预览功能-放大
     picUrls:[]
   },
@@ -42,7 +42,7 @@ Page({
   handleTab(e){
     console.log(e)
     const {index} = e.currentTarget.dataset
-    
+
     this.setData({
       current:index
     })
@@ -53,6 +53,12 @@ Page({
     wx.previewImage({
       current: this.data.picUrls[index], // 当前显示图片的http链接
       urls: this.data.picUrls // 需要预览的图片http链接列表
+    })
+  },
+  // 通过事件方式跳转到购物车页面
+  handleToCart(e){
+    wx.switchTab({
+      url: '/pages/shopping/index',
     })
   }
 })
