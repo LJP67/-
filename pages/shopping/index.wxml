@@ -30,13 +30,13 @@
   <!-- 购物车商品列表的头部 -->
     <view class="goods-list-title">
         <view class="iconfont iconRectangleCopy9"></view>
-        女优生活馆
+        优购生活馆
     </view>
 
     <!-- 商品列表 -->
     <view class="goods-list">
         <!-- 商品的单项, 需要循环的 -->
-        <view class="goods-item" wx:for="{{5}}">
+        <view class="goods-item" wx:for="{{1}}" wx:key="index">
             <icon type="success" color="red"></icon>
             <image mode="aspectFill" src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1038868887,560278828&fm=26&gp=0.jpg"></image>
 

@@ -58,9 +58,9 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/shopping/index",
-					"pathName": "pages/shopping/index",
-					"query": "",
+					"name": "pages/detailpage/index",
+					"pathName": "pages/detailpage/index",
+					"query": "keyword=57396",
 					"scene": null
 				}
 			]

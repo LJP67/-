@@ -60,5 +60,40 @@ Page({
     wx.switchTab({
       url: '/pages/shopping/index',
     })
+  },
+  // 加入购物车
+  handjiaru(){
+    // 每次加入商品之前应该先判断下本地有没有数据,如果没有的话就给个空数组
+      const goods = wx.getStorageSync("goods") || [];
+    // 然后还要判断商品的详情是否有在goods数组里面
+    // 如果有,购物车同款样品加1,如果没有就unshift
+    const exit = goods.some(v =>{
+      // 存在就+1  通过id判断当前的商品是否在本地数组中
+      const isjia = v.goods_id === this.data.shang.goods_id;
+      if(isjia){
+        v.number += 1;
+        // 提示用户已添加 在官网的api界面---交互里面
+        wx.showToast({
+          title: '已添加',
+          icon: 'success'
+        })
+      }
+      return isjia;
+    })
+    // 如果上面的id判断与本地存储的id相等话 下面unshift里面的代码就不会执行
+    // 如果没有的话就执行
+    if (!exit){
+      // 把当前的商品添加到本地的数组中去
+      goods.unshift({
+        goods_id: this.data.shang.goods_id,
+        goods_name: this.data.shang.goods_name,
+        goods_price: this.data.shang.goods_price,
+        goods_small_logo: this.data.shang.goods_small_logo,
+        number: 1
+      })
+    }
+    // 保存到本地
+    wx.setStorageSync("goods", goods)
   }
+
 })

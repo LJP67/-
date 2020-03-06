@@ -5,6 +5,7 @@ Page({
     formdz:{}
   },
   // 生命周期的函数 监听页面的加载
+  // 页面一加载就把里面的数据拿出来渲染
   onLoad:function(options){
     // 获取本地存储,即便刷新后页面数据任在
     this.setData({
