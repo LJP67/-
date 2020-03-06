@@ -2,7 +2,9 @@
 Page({
   data:{
     // 收货地址
-    formdz:{}
+    formdz:{},
+    // 本地的商品列表
+    goods:[]
   },
   // 生命周期的函数 监听页面的加载
   // 页面一加载就把里面的数据拿出来渲染
@@ -11,6 +13,11 @@ Page({
     this.setData({
       // 如果本地没有数据就设置成空对象
       formdz: wx.getStorageSync("formdz") || {}
+    })
+  },
+  onShow(){
+    this.setData({
+      goods: wx.getStorageSync("goods") || []
     })
   },
   // 获取收货地址
