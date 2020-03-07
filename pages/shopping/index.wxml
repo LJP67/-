@@ -38,8 +38,9 @@
         <!-- 商品的单项, 需要循环的 -->
         <view class="goods-item" wx:for="{{ goods }}" wx:key="index">
             <icon type="success" color="red"></icon>
-            <image mode="aspectFill" src="{{item.goods_small_logo}}"></image>
-
+            <navigator url="/pages/detailpage/index?keyword={{item.goods_id}}">
+              <image mode="aspectFill" src="{{item.goods_small_logo}}"></image>
+            </navigator>
             <!-- 商品信息右侧 -->
             <view class="goods-item-right">
                 <view class="goods-title">
@@ -53,7 +54,7 @@
                     <view class="goods-number">
                         <view class="calc-button">-</view>
                         <input value="{{item.number}}"></input>
-                        <view class="calc-button">+</view>
+                        <view data-index="{{index}}" class="calc-button" bindtap="numplus">+</view>
                     </view>
                 </view>
             </view>
@@ -69,7 +70,7 @@
         <view class="allprice">
             <view class="allprice-top">合计
                 <text>
-                    <text>￥</text>1512210
+                    <text>￥</text>{{zjgprice}}
                 </text>
             </view>
             <view class="allprice-btm">包含运费</view>

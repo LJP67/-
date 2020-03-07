@@ -4,7 +4,9 @@ Page({
     // 收货地址
     formdz:{},
     // 本地的商品列表
-    goods:[]
+    goods:[],
+    // 计算总价格
+    zjgprice:0
   },
   // 生命周期的函数 监听页面的加载
   // 页面一加载就把里面的数据拿出来渲染
@@ -18,7 +20,9 @@ Page({
   onShow(){
     this.setData({
       goods: wx.getStorageSync("goods") || []
-    })
+    });
+     // 计算总价格
+    this.handprice();
   },
   // 获取收货地址
   handshow(){
@@ -40,6 +44,28 @@ Page({
       }
     })
   },
-
+  // 计算总价格
+  handprice(){
+    let price = 0;
+    // 循环添加商品的价格
+     this.data.goods.forEach(v =>{
+       price = price + v.goods_price * v.number
+      
+     })
+  // 修改总价格
+    this.setData({
+      zjgprice: price 
+    })
+  },
+  // 数量加1  
+  numplus(e){
+    const {index} = e.currentTarget.dataset
+    console.log(index)
+    this.data.goods[index].number += 1
+    console.log(this.data.goods)
+    this.setData({
+      goods:this.data.goods
+    })
+  },
 
 })
