@@ -57,11 +57,12 @@ Page({
       zjgprice: price 
     })
   },
-  // 数量加1  
+  // 数量加减
   numplus(e){
-    const {index} = e.currentTarget.dataset
-    console.log(index)
-    this.data.goods[index].number += 1
+    // index:自定义组件传过来的-索引值,是告诉我们当前点击的是哪个按钮 
+    const {index,number} = e.currentTarget.dataset
+    console.log(index,number)
+    this.data.goods[index].number += number
     console.log(this.data.goods)
     this.setData({
       goods:this.data.goods

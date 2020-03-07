@@ -52,9 +52,23 @@
                     </view>
                     <!-- 商品的数量 -->
                     <view class="goods-number">
-                        <view class="calc-button">-</view>
+                    <!-- 减一 -->
+                        <view
+                         class="calc-button"
+                          bindtap="numplus"
+                         data-number="{{-1}}"
+                         data-index="{{index}}" 
+                         >-</view>
                         <input value="{{item.number}}"></input>
-                        <view data-index="{{index}}" class="calc-button" bindtap="numplus">+</view>
+                        <!-- 加一 -->
+                        <view 
+                        data-number="{{1}}"
+                        data-index="{{index}}" 
+                        class="calc-button" 
+                        bindtap="numplus"
+                        >
+                        +
+                        </view>
                     </view>
                 </view>
             </view>
