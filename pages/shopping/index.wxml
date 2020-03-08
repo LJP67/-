@@ -29,7 +29,10 @@
 
   <!-- 购物车商品列表的头部 -->
     <view class="goods-list-title">
-        <view class="iconfont iconRectangleCopy9"></view>
+        <view
+         class="iconfont iconRectangleCopy9"
+       
+        ></view>
         优购生活馆
     </view>
 
@@ -37,7 +40,14 @@
     <view class="goods-list">
         <!-- 商品的单项, 需要循环的 -->
         <view class="goods-item" wx:for="{{ goods }}" wx:key="index">
-            <icon type="success" color="red"></icon>
+            <!-- 是否选中的状态 -->
+            <icon 
+            type="success" 
+            color="{{item.select ? 'red' : 'gray'}}"
+            data-index="{{index}}"
+            bindtap="handicon"
+            ></icon>
+
             <navigator url="/pages/detailpage/index?keyword={{item.goods_id}}">
               <image mode="aspectFill" src="{{item.goods_small_logo}}"></image>
             </navigator>

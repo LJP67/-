@@ -50,7 +50,10 @@ Page({
     let price = 0;
     // 循环添加商品的价格
      this.data.goods.forEach(v =>{
-       price = price + v.goods_price * v.number
+      //  如果是选中状态则重新计算价格
+       if(v.select){
+         price = price + v.goods_price * v.number
+       }
      })
   // 修改总价格
     this.setData({
@@ -121,4 +124,23 @@ Page({
     // 计算总价格
     this.handprice()
   },
+
+  // 商品选中状态
+  handicon(e){
+    console.log(e)
+    // 索引
+    const { index }= e.currentTarget.dataset
+    console.log(index)
+    // 解构出select选中状态
+     const { select } = this.data.goods[index]
+    //  console.log(select)
+    // 取反这个函数的变化
+    this.data.goods[index].select = !select
+    // 重新修改goods值
+    this.setData({
+      goods: this.data.goods
+    });
+    // 计算总价格
+    this.handprice()
+  }
 })

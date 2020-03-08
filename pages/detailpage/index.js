@@ -89,7 +89,8 @@ Page({
         goods_name: this.data.shang.goods_name,
         goods_price: this.data.shang.goods_price,
         goods_small_logo: this.data.shang.goods_small_logo,
-        number: 1
+        number: 1,
+        select:true
       })
       wx.showToast({
         title: '添加成功',
