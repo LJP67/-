@@ -59,7 +59,13 @@
                          data-number="{{-1}}"
                          data-index="{{index}}" 
                          >-</view>
-                        <input value="{{item.number}}"></input>
+                         <!-- 内容 -->
+                        <input 
+                        value="{{item.number}}"
+                        data-index="{{index}}"
+                        type="number"
+                        bindinput="handnunber"
+                        ></input>
                         <!-- 加一 -->
                         <view 
                         data-number="{{1}}"

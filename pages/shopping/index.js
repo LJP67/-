@@ -63,9 +63,9 @@ Page({
   numplus(e){
     // index:自定义组件传过来的-索引值,是告诉我们当前点击的是哪个按钮 
     const {index,number} = e.currentTarget.dataset
-    // console.log(index,number)
+
     this.data.goods[index].number += number
-    // console.log(this.data.goods)
+
     // 判断输入框是否为0 是的话则弹窗提示删除该商品
     if (this.data.goods[index].number === 0){
       wx.showModal({
@@ -80,13 +80,14 @@ Page({
           }else{
             // 当数值为0时如果点击取消的话就给它加一
             this.data.goods[index].number += 1
-            // 调用计算总价格 实现价格刷新
-            this.handprice()
-          }
+           
+          } 
           // 重新修改goods值
           this.setData({
             goods: this.data.goods
           })
+          // 调用计算总价格 实现价格刷新
+          this.handprice()
         }
       })
     }
@@ -94,9 +95,30 @@ Page({
       this.setData({
         goods: this.data.goods
       });
-    
   // 计算总价格
     this.handprice()
   },
 
+  // 输入框只能为数字
+  handnunber(e){
+    console.log(e)
+    // index是当前点击商品的索引
+    const {index} = e.currentTarget.dataset
+    // value则是输入框里面的值
+    let {value} = e.detail
+    // 取整输入框中的value值
+    value = Math.floor(Number(value))
+    // 判断value值如果小于1,那就让它等于1
+    if( value < 1 ){
+        value = 1
+    }
+    // 输入框的值如果改变.总价格也随着改变
+    this.data.goods[index].number = value
+    // 重新修改goods值
+    this.setData({
+      goods: this.data.goods
+    });
+    // 计算总价格
+    this.handprice()
+  },
 })
