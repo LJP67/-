@@ -6,7 +6,8 @@
     "pages/shopping/index",
     "pages/hakusivu/index",
     "pages/seek/index",
-    "pages/detailpage/index"
+    "pages/detailpage/index",
+    "pages/payment/index"
     
   ],
   "window": {

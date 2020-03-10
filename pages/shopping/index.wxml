@@ -109,9 +109,9 @@
             </view>
             <view class="allprice-btm">包含运费</view>
         </view>
-        <view class="checkout-btn">
+        <navigator url="/pages/payment/index" class="checkout-btn">
             结算
-        </view>
+        </navigator> 
     </view>
 
     <!-- 结尾 -->

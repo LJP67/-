@@ -18,12 +18,13 @@ onLoad(){
     })
   })
 },
+// 左侧
   handclick(e){
     console.log(e)
     const {index} = e.currentTarget.dataset
     this.setData({
       current:index
     })
-  }
- 
+  },
+
 })

@@ -58,8 +58,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/shopping/index",
-					"pathName": "pages/shopping/index",
+					"name": "pages/payment/index",
+					"pathName": "pages/payment/index",
 					"query": "keyword=57396",
 					"scene": null
 				}

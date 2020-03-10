@@ -139,7 +139,7 @@ Page({
     // 解构出select选中状态
      const { select } = this.data.goods[index]
     //  console.log(select)
-    // 取反这个函数的变化
+    // 取反这个select函数的变化
     this.data.goods[index].select = !select
     // 重新修改goods值
     this.setData({
@@ -192,5 +192,6 @@ Page({
     });
     // 计算总价格
     this.handprice()
-  }
+  },
+  
 })
