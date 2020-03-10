@@ -94,7 +94,11 @@
   <!-- 全选和总价格 -->
     <view class="checkout">
         <view class="allselect">
-            <icon type="success" color="red"></icon>
+            <icon 
+            type="success" 
+            color="{{quanxuan ? 'red' : 'gray'}}"
+            bindtap="handqx"
+            ></icon>
             全选
         </view>
         <view class="allprice">
@@ -109,10 +113,6 @@
             结算
         </view>
     </view>
-
-
-
-
 
     <!-- 结尾 -->
 </view>

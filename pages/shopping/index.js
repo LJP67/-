@@ -6,7 +6,9 @@ Page({
     // 本地的商品列表
     goods:[],
     // 计算总价格
-    zjgprice:0
+    zjgprice:0,
+    // 全选
+    quanxuan:false
 
   },
   // 生命周期的函数 监听页面的加载
@@ -24,6 +26,8 @@ Page({
     });
      // 计算总价格
     this.handprice();
+    // 全选状态
+    this.handquan()
   },
   // 获取收货地址
   handshow(){
@@ -100,6 +104,7 @@ Page({
       });
   // 计算总价格
     this.handprice()
+    
   },
 
   // 输入框只能为数字
@@ -127,10 +132,10 @@ Page({
 
   // 商品选中状态
   handicon(e){
-    console.log(e)
+    // console.log(e)
     // 索引
     const { index }= e.currentTarget.dataset
-    console.log(index)
+    // console.log(index)
     // 解构出select选中状态
      const { select } = this.data.goods[index]
     //  console.log(select)
@@ -139,6 +144,51 @@ Page({
     // 重新修改goods值
     this.setData({
       goods: this.data.goods
+    });
+    // 全选状态
+    this.handquan()
+    // 计算总价格
+    this.handprice()
+   
+  },
+  
+  // 商品全选
+  handquan(){
+    //定义一个变量 假设所有都选中
+    let zhong = true
+    // 遍历所有的商品，只要有一个商品状态是false,select就等于false
+    this.data.goods.forEach(v =>{
+  // 如果已经有一个商品状态是false，后面的循环不用再判断了
+      if (zhong === false){
+          return
+    }
+  // 把全选的中状态修改为false
+      if (v.select === false){
+        zhong = false
+      }
+    })
+    // 保持全选状态
+    this.setData({
+      quanxuan: zhong
+    });
+  },
+
+  // 点击全选选中所有商品
+  handqx(){
+    // quanxuan:在这边是为false;
+    const {quanxuan} =this.data;
+    console.log(quanxuan)
+    // 然后要给每个商品同时修改它们的状态  所以要循环
+    this.data.goods.forEach(v =>{
+        // 因为quanxuan变量为false,所以我们在这边取反就可以获得相对应的效果
+        v.select = !quanxuan
+      // 然后我上面修改了goods中的值 那这边就得重新加载这个goods
+    });
+    // 重新修改goods值
+    this.setData({
+      goods: this.data.goods,
+      // 保存全选的状态
+      quanxuan: !quanxuan
     });
     // 计算总价格
     this.handprice()
