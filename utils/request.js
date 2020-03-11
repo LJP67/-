@@ -11,6 +11,11 @@ const request =(confing={})=>{
   }
 
     return new Promise((resolve,reject)=>{
+      // 显示加载中提示浮层
+      wx.showLoading({
+        title: '加载中',
+        mask: true
+      })
       wx.request({
         //展开运算 里面有url,data 等
         ...confing,
@@ -24,7 +29,10 @@ const request =(confing={})=>{
         },
         //无论失败还是成功的回调函数
         complete(res){
+        // 执行错误拦截器
           request.errors(res)
+          // 隐藏加载中提示浮层
+          wx.hideLoading()
         }
       })
     })
