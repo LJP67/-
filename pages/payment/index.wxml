@@ -48,7 +48,7 @@
       合算:￥{{zjgprice}}
     </view>
     <!-- 支付按钮 -->
-  <button type="primary">
+  <button type="primary"  bindtap="zhifu">
     立即支付
   </button>
     <!-- 结尾 -->

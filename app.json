@@ -7,8 +7,8 @@
     "pages/hakusivu/index",
     "pages/seek/index",
     "pages/detailpage/index",
-    "pages/payment/index"
-    
+    "pages/payment/index",
+    "pages/accredit/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
